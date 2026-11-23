@@ -136,6 +136,13 @@ section.block{padding:clamp(80px,12vw,150px) var(--gutter);border-top:1px solid 
 .stats b{display:block;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--prod)}
 .stats span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 @media (max-width:860px){.edge{grid-template-columns:1fr}}
+.expo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-top:0}
+.expo figure{margin:0;background:var(--bg);position:relative;overflow:hidden;min-height:0}
+.expo figure:nth-child(-n+2){grid-row:span 2}
+.expo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.expo figure:nth-child(-n+2) img{position:static;aspect-ratio:3/4}
+.expo figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+@media (max-width:860px){.expo{grid-template-columns:1fr;grid-template-rows:none}.expo figure:nth-child(-n+2){grid-row:auto}.expo img{position:static;aspect-ratio:4/3}}
 
 /* about */
 .about-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(32px,6vw,96px)}
@@ -378,7 +385,7 @@ footer{padding:28px var(--gutter);border-top:1px solid var(--line);font-family:v
       <div>
         <div class="tag">RisingCompute · Bengaluru Space Expo 2026</div>
         <h3>Edge AI for space, under one watt</h3>
-        <p>At the Bengaluru Space Expo 2026 we presented RisingCompute's edge AI work to the <b>ISRO Chairman</b>. Our demo ran a <b>YOLOv8</b> object-detection model on a <b>Microchip PolarFire FPGA</b> at under 1 W. That is <b>30–40× more power-efficient</b> than running the same model on a typical GPU, and the kind of power budget a small satellite can actually afford.</p>
+        <p>At the Bengaluru Space Expo 2026 we presented RisingCompute's edge AI work to <b>Dr. V. Narayanan, Chairman of ISRO</b>. Our demo ran a <b>YOLOv8</b> object-detection model on a <b>Microchip PolarFire FPGA</b> at under 1 W. That is <b>30–40× more power-efficient</b> than running the same model on a typical GPU, and the kind of power budget a small satellite can actually afford.</p>
       </div>
       <div class="stats" aria-label="Demo results">
         <div><b>&lt;1 W</b><span>Inference power</span></div>
@@ -387,6 +394,12 @@ footer{padding:28px var(--gutter);border-top:1px solid var(--line);font-family:v
         <div><b>FPGA</b><span>PolarFire</span></div>
       </div>
     </article>
+    <div class="expo rv" aria-label="Bengaluru Space Expo 2026 photos">
+      <figure><img src="assets/img/bsx-isro-chairman.jpg" alt="Dr. V. Narayanan, ISRO Chairman, at the RisingCompute stall looking at the edge AI hardware demo" width="800" height="1064" loading="lazy"><figcaption>Presenting to Dr. V. Narayanan, Chairman, ISRO</figcaption></figure>
+      <figure><img src="assets/img/bsx-demo.jpg" alt="RisingCompute team explaining the demo to visitors, with flight hardware and a live detection display" width="800" height="1064" loading="lazy"><figcaption>Explaining the demo</figcaption></figure>
+      <figure><img src="assets/img/bsx-chairman-group.jpg" alt="The RisingCompute and SSPACE team with the ISRO Chairman at the stall" width="800" height="600" loading="lazy"><figcaption>With the ISRO Chairman</figcaption></figure>
+      <figure><img src="assets/img/bsx-team.jpg" alt="Team photo at the RisingCompute stall beside a Powering the Future of Space Computing banner" width="800" height="600" loading="lazy"><figcaption>Hall 1 · Stall 9, BIEC</figcaption></figure>
+    </div>
 
     <div class="poems" id="poems">
       <!-- REPLACE: user's poem -->
