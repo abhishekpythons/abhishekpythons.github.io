@@ -6,4 +6,20 @@
     <image:image><image:loc>https://abhishekpythons.github.io/assets/img/bsx-chairman-group.jpg</image:loc></image:image>
     <image:image><image:loc>https://abhishekpythons.github.io/assets/img/grace-launch.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://abhishekpythons.github.io/about.html</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://abhishekpythons.github.io/space.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <image:image><image:loc>https://abhishekpythons.github.io/assets/img/grace-launch.jpg</image:loc></image:image>
+    <image:image><image:loc>https://abhishekpythons.github.io/assets/img/pilot.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://abhishekpythons.github.io/risingcompute.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <image:image><image:loc>https://abhishekpythons.github.io/assets/img/bsx-isro-chairman.jpg</image:loc></image:image>
+    <image:image><image:loc>https://abhishekpythons.github.io/assets/img/bsx-chairman-group.jpg</image:loc></image:image>
+  </url>
 </urlset>
