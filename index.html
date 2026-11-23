@@ -102,6 +102,29 @@ section.block{padding:clamp(80px,12vw,150px) var(--gutter);border-top:1px solid 
 .card .status i{width:6px;height:6px;border-radius:50%;background:var(--c)}
 .card .status.live i{box-shadow:0 0 8px var(--c);animation:blink 1.6s infinite}
 
+/* mission media */
+.card .media{margin:calc(-1*clamp(24px,3vw,36px)) calc(-1*clamp(24px,3vw,36px)) 8px;aspect-ratio:16/10;overflow:hidden;background:#0d0f1a;border-bottom:1px solid var(--line)}
+.card .media img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .media img{transform:scale(1.03)}
+.card .meta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.launch{padding:clamp(56px,8vw,110px) var(--gutter);border-top:1px solid var(--line)}
+.launch figure{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end}
+.launch .photo{position:relative;overflow:hidden;border:1px solid var(--line-2);aspect-ratio:552/501}
+.launch .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.launch .photo::after{content:"PSLV-C60 · SDSC SHAR · 2024";position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#fff;background:rgba(0,0,0,.55);padding:4px 8px}
+.launch figcaption .kicker{color:var(--space);display:flex;gap:12px;align-items:center}
+.launch figcaption .kicker::before{content:"";width:28px;height:1px;background:currentColor}
+.launch figcaption h2{font-size:clamp(34px,4.6vw,60px);line-height:1;letter-spacing:-.03em;font-weight:800;margin:14px 0 16px}
+.launch figcaption h2 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--space)}
+.launch figcaption p{color:var(--muted);max-width:44ch}
+.launch figcaption p b{color:var(--ink);font-weight:600}
+@media (max-width:860px){.launch figure{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:clamp(40px,5vw,64px)}
+.gallery figure{background:var(--bg);margin:0}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#fff}
+.gallery figcaption{padding:12px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.gallery{grid-template-columns:1fr}}
+
 /* about */
 .about-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(32px,6vw,96px)}
 .about-body .big{font-size:clamp(22px,2.6vw,32px);line-height:1.3;letter-spacing:-.015em}
@@ -195,6 +218,20 @@ footer{padding:28px var(--gutter);border-top:1px solid var(--line);font-family:v
 </header>
 
 <main>
+<!-- LAUNCH -->
+<section class="launch" aria-labelledby="launch-h">
+  <div class="wrap">
+    <figure class="rv">
+      <div class="photo"><img src="assets/img/grace-launch.jpg" alt="The IIST GRACE team standing in front of the PSLV-C60 rocket on the launch pad at Sriharikota" width="552" height="501" fetchpriority="high"></div>
+      <figcaption>
+        <div class="kicker">Launch · GRACE (PILOT-G2)</div>
+        <h2 id="launch-h">Code I wrote, <em>in orbit</em>.</h2>
+        <p>The GRACE team at the pad before <b>PSLV-C60</b> lifted off in 2024. I was the <b>chief software developer</b> for the mission. GRACE flew on ISRO's PSLV Orbital Experimental Module (POEM).</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="block" id="about">
   <div class="wrap">
@@ -206,12 +243,13 @@ footer{padding:28px var(--gutter);border-top:1px solid var(--line);font-family:v
       <p>The left half runs on orbits and equations. The right half runs on ideas, products and the occasional poem. Most of the interesting work happens in the bridge between them.</p>
     </div>
     <div class="about-body rv">
-      <p class="big">I'm Abhishek — a <span class="s">space science</span> and <span class="d">data science</span> enthusiast pursuing a <em>double bachelor's</em>: B.Tech in Avionics at IIST and, in parallel, a BS at IIT Madras. I've worked on satellite ground stations, launched a payload, started a company, and I now help steer a student satellite mission — while still finding time to <span class="p">build products</span> and <span class="q">write verse</span>.</p>
+      <p class="big">I'm Abhishek — a <span class="s">space science</span> and <span class="d">data science</span> enthusiast pursuing a <em>double bachelor's</em>: B.Tech in Avionics at IIST and, in parallel, a BS at IIT Madras. I've managed a satellite ground station, written the flight software for a payload now in orbit, started a company, and I now help steer a student satellite mission — while still finding time to <span class="p">build products</span> and <span class="q">write verse</span>.</p>
       <ul class="facts">
         <li><span>Now</span>Program Manager, InspireSat-3</li>
         <li><span>Founded</span>Rising Compute</li>
-        <li><span>Launched</span>GRACE payload</li>
-        <li><span>Built</span>Ground station, InspireSat-1</li>
+        <li><span>Launched</span>GRACE, as chief software developer (PSLV-C60, 2024)</li>
+        <li><span>Launched</span>PILOT, as a team member (PSLV-C55, 2023)</li>
+        <li><span>Managed</span>InspireSat-1 ground station (PSLV-C52, 2022)</li>
         <li><span>Study</span>B.Tech Avionics, IIST<br>BS in Data Science &amp; Applications, IIT Madras (ongoing)</li>
       </ul>
     </div>
@@ -228,25 +266,45 @@ footer{padding:28px var(--gutter);border-top:1px solid var(--line);font-family:v
       </div>
       <p>From the antenna on the ground to the payload in orbit — I've worked across the full chain of a small-satellite mission, and now manage one end to end.</p>
     </div>
-    <div class="grid g3 rv">
+    <div class="grid rv" style="border-bottom:0">
       <article class="card">
         <div class="tag">Program management</div>
         <h3>InspireSat-3</h3>
-        <p>Leading the program — aligning subsystem teams, schedules, reviews and integration milestones to take the satellite from design to launch readiness.</p>
+        <p>Leading the program: aligning subsystem teams, schedules, reviews and integration milestones to take the satellite from design to launch readiness.</p>
         <div class="status live"><i></i>Current role</div>
       </article>
+    </div>
+    <div class="grid g3 rv">
       <article class="card">
-        <div class="tag">Payload</div>
-        <h3>GRACE</h3>
-        <p>Took the GRACE payload from concept through integration and testing to launch — the full lifecycle of hardware that has to work the first time.</p>
+        <div class="media"><img src="assets/img/poem-grace.png" alt="Render of the PSLV Orbital Experimental Module carrying the GRACE payload" loading="lazy" width="473" height="478"></div>
+        <div class="tag">Chief software developer</div>
+        <h3>GRACE (PILOT-G2)</h3>
+        <div class="meta">PSLV-C60 · POEM · 2024</div>
+        <p>Led the flight software for GRACE, from architecture through testing to launch on ISRO's PSLV Orbital Experimental Module.</p>
         <div class="status"><i></i>Launched</div>
       </article>
       <article class="card">
-        <div class="tag">Ground segment</div>
-        <h3>InspireSat-1 ground station</h3>
-        <p>Worked on the ground station: tracking passes, receiving telemetry and keeping the link alive for the minutes the satellite is overhead.</p>
-        <div class="status"><i></i>Mission support</div>
+        <div class="media"><img src="assets/img/pilot.png" alt="The PILOT payload on a test fixture, tagged Accepted for Flight" loading="lazy" width="538" height="432"></div>
+        <div class="tag">Mission team</div>
+        <h3>PILOT</h3>
+        <div class="meta">PSLV-C55 · POEM · 2023</div>
+        <p>Part of the team behind IIST's student technology-demonstration payload. It flew a 3D-printed metal structure, an in-house on-board computer and flight software, and RS485 telemetry to the POEM.</p>
+        <div class="status"><i></i>Launched</div>
       </article>
+      <article class="card">
+        <div class="media"><img src="assets/img/ground-station-1.png" alt="The IIST satellite ground station dish antenna against the sky" loading="lazy" width="548" height="308"></div>
+        <div class="tag">Ground Station Manager</div>
+        <h3>InspireSat-1 ground station</h3>
+        <div class="meta">PSLV-C52 · Feb 2022</div>
+        <p>Managed the IIST ground station for InspireSat-1: tracking passes, commanding, and receiving telemetry over VHF, UHF and S-band. The satellite was built with LASP, NCU and NTU, and kept operating long past its 6-month design life.</p>
+        <div class="status"><i></i>Mission operations</div>
+      </article>
+    </div>
+
+    <div class="gallery rv" aria-label="Mission photos">
+      <figure><img src="assets/img/ground-station-2.png" alt="Mission control room at IIST with tracking displays and RF equipment racks" loading="lazy"><figcaption>Mission control · IIST ground station</figcaption></figure>
+      <figure><img src="assets/img/inspiresat-ponmudi.png" alt="InspireSat-1 flight hardware on the integration table" loading="lazy"><figcaption>InspireSat-1 · flight hardware</figcaption></figure>
+      <figure><img src="assets/img/inspiresat-1.png" alt="Render of InspireSat-1 with deployed solar panels" loading="lazy"><figcaption>InspireSat-1 · spacecraft render</figcaption></figure>
     </div>
   </div>
 </section>
@@ -333,8 +391,9 @@ footer{padding:28px var(--gutter);border-top:1px solid var(--line);font-family:v
     <ol class="timeline rv">
       <li style="--c:var(--space)"><div class="when">Now</div><h3>Program Manager — InspireSat-3</h3><p>Steering the next satellite in the INSPIRE series across teams, timelines and reviews.</p></li>
       <li style="--c:var(--prod)"><div class="when">Founder</div><h3>Rising Compute</h3><p>Started a company to build products at the intersection of compute and ideas.</p></li>
-      <li style="--c:var(--space)"><div class="when">Launch</div><h3>GRACE payload</h3><p>Designed, integrated and launched a payload to space.</p></li>
-      <li style="--c:var(--space)"><div class="when">Ground segment</div><h3>Ground station — InspireSat-1</h3><p>Supported satellite operations from the ground.</p></li>
+      <li style="--c:var(--space)"><div class="when">2024 · PSLV-C60</div><h3>Chief Software Developer: GRACE (PILOT-G2)</h3><p>Led the flight software for GRACE, launched on ISRO's PSLV Orbital Experimental Module.</p></li>
+      <li style="--c:var(--space)"><div class="when">2023 · PSLV-C55</div><h3>Team member: PILOT</h3><p>Part of the team behind IIST's student technology-demonstration payload on POEM.</p></li>
+      <li style="--c:var(--space)"><div class="when">2022 · PSLV-C52</div><h3>Ground Station Manager: InspireSat-1</h3><p>Ran the IIST ground station that tracked and operated InspireSat-1.</p></li>
       <li style="--c:var(--data)"><div class="when">Ongoing</div><h3>BS in Data Science &amp; Applications — IIT Madras</h3><p>A second bachelor's, pursued in parallel with the B.Tech.</p></li>
       <li style="--c:var(--space)"><div class="when">Ongoing</div><h3>B.Tech in Avionics — IIST</h3><p>Indian Institute of Space Science and Technology, Thiruvananthapuram.</p></li>
     </ol>
